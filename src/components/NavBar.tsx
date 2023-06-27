@@ -48,7 +48,7 @@ export default function NavBar(props: Props) {
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding  onClick={() => handleNavigation('home-section')}>
+          <ListItem key={item} disablePadding  onClick={() => handleNavigation(item)}>
             <ListItemButton  sx={{ textAlign: "center" }}>
               <ListItemText primary={item}/>
             </ListItemButton>
@@ -84,7 +84,7 @@ export default function NavBar(props: Props) {
           </Typography>
           <Box sx={{ display: { xs: "none", sm: "block" } }}>
             {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }} onClick={() => handleNavigation('home-section')}>
+              <Button key={item} sx={{ color: "#fff" }} onClick={() => handleNavigation(item)}>
                 {item}
               </Button>
             ))}
