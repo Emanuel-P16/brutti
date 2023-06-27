@@ -41,13 +41,13 @@ export default function Carrousel(props: Props) {
     useEffect(() => {
         if (props.autoPlay || !props.showButtons) {
             const interval = setInterval(() => {
-                selectNewImage(selectedIndex, props.images);
+                selectNewImage(props.images);
             }, 5000);
             return () => clearInterval(interval);
         }
     });
 
-    const selectNewImage = (index: number, images: string[], next = true) => {
+    const selectNewImage = (images: string[], next = true) => {
         setLoaded(false)
         setTimeout(() => {
             const condition = next ? selectedIndex < images.length - 1 : selectedIndex > 0;
@@ -57,10 +57,10 @@ export default function Carrousel(props: Props) {
         }, 500);
     }
     const previous = () => {
-        selectNewImage(selectedIndex, props.images, false)
+        selectNewImage(props.images, false)
     }
     const next = () => {
-        selectNewImage(selectedIndex, props.images)
+        selectNewImage(props.images)
     }
     return (
         <Grid item xs={12}>
