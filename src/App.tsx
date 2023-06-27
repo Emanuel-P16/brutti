@@ -8,7 +8,7 @@ import tc3 from './assets/tc3.jpg'
 const Container = styled('div')(({ theme }) => ({
   background: theme.palette.primary.light,
   color: theme.palette.primary.contrastText,
-  padding: '4vw 12vw',
+  padding: '10vw',
 }));
 
 export default function App() {
