@@ -63,7 +63,7 @@ export default function Carrousel(props: Props) {
         selectNewImage(props.images)
     }
     return (
-        <Grid item xs={12}>
+        <Grid item xs={12} id={'Inicio'}>
             <CarrouselImg
                 src={selectedImage}
                 className={loaded ? "loaded" : ""}
