@@ -1,6 +1,10 @@
 import { Grid, ThemeProvider, Typography, createTheme, styled } from '@mui/material';
 import NavBar from "./components/NavBar";
 import { primaryColorPalette, secondaryColorPalette } from "./color-palette";
+import Carrousel from './components/Carrousel';
+import tc1 from './assets/tc1.jpg'
+import tc2 from './assets/tc2.jpg'
+import tc3 from './assets/tc3.jpg'
 const Container = styled('div')(({ theme }) => ({
   background: theme.palette.primary.light,
   color: theme.palette.primary.contrastText,
@@ -9,6 +13,9 @@ const Container = styled('div')(({ theme }) => ({
 
 export default function App() {
 
+  const images = [
+    tc1,tc2,tc3
+  ]
   const theme = createTheme(
     {
       palette: {
@@ -31,6 +38,7 @@ export default function App() {
           alignItems="center"
           spacing={3}
         >
+          <Carrousel images={images}/>
           <Grid item xs={12}>
             <Typography variant="h6" align="center" gutterBottom={true}>
             ¿Deseas transformar tu realidad y descubrir un camino hacia tu verdadera expresión del corazón y el bienestar? ¡Te ayudo a explorar las prácticas orientales del Tai Chi 
