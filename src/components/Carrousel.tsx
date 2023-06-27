@@ -1,6 +1,6 @@
 import { Grid } from '@mui/material';
-import { useState } from 'react';
-import styled from  'styled-components'
+import { useEffect, useState } from 'react';
+import styled from 'styled-components'
 
 
 const CarrouselImg = styled.img`
@@ -14,7 +14,7 @@ const CarrouselImg = styled.img`
   }
   `;
 
-  const CarrouselButtonContainer = styled.div`
+const CarrouselButtonContainer = styled.div`
   display: flex;
   align-content: center;
   flex-direction: row;
@@ -29,41 +29,54 @@ const CarrouselButton = styled.button`
 `;
 interface Props {
     images: string[];
-    // autoPlay?: boolean;
-    // showButtons?: boolean;
-  }
+    autoPlay?: boolean;
+    showButtons?: boolean;
+}
 
 export default function Carrousel(props: Props) {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [selectedImage, setSelectedImage] = useState(props.images[0]);
     const [loaded, setLoaded] = useState(false);
 
-    const selectNewImage = (index: number, images: string[] , next = true) => {
+    useEffect(() => {
+        if (props.autoPlay || !props.showButtons) {
+            const interval = setInterval(() => {
+                selectNewImage(selectedIndex, props.images);
+            }, 5000);
+            return () => clearInterval(interval);
+        }
+    });
+
+    const selectNewImage = (index: number, images: string[], next = true) => {
         setLoaded(false)
         setTimeout(() => {
-            const condition = next ? selectedIndex < images.length -1 : selectedIndex > 0 ;
+            const condition = next ? selectedIndex < images.length - 1 : selectedIndex > 0;
             const nextIndex = next ? (condition ? selectedIndex + 1 : 0) : condition ? selectedIndex - 1 : images.length - 1;
             setSelectedImage(images[nextIndex]);
             setSelectedIndex(nextIndex);
         }, 500);
     }
     const previous = () => {
-        selectNewImage(selectedIndex,props.images, false)
+        selectNewImage(selectedIndex, props.images, false)
     }
     const next = () => {
-        selectNewImage(selectedIndex,props.images)
+        selectNewImage(selectedIndex, props.images)
     }
-    return(
+    return (
         <Grid item xs={12}>
-            <CarrouselImg 
+            <CarrouselImg
                 src={selectedImage}
                 className={loaded ? "loaded" : ""}
                 onLoad={() => setLoaded(true)}
             />
-            <CarrouselButtonContainer>
-                <CarrouselButton onClick={previous}>{"<"}</CarrouselButton>
-                <CarrouselButton onClick={next}>{">"}</CarrouselButton>
-            </CarrouselButtonContainer>
+            {
+                props.showButtons ? (
+                    <CarrouselButtonContainer>
+                        <CarrouselButton onClick={previous}>{"<"}</CarrouselButton>
+                        <CarrouselButton onClick={next}>{">"}</CarrouselButton>
+                    </CarrouselButtonContainer>
+                ) : <></>
+            }
         </Grid>
     )
 }

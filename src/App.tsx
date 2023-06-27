@@ -38,7 +38,7 @@ export default function App() {
           alignItems="center"
           spacing={3}
         >
-          <Carrousel images={images}/>
+          <Carrousel images={images} autoPlay={true} showButtons={true}/>
           <Grid item xs={12}>
             <Typography variant="h6" align="center" gutterBottom={true}>
             ¿Deseas transformar tu realidad y descubrir un camino hacia tu verdadera expresión del corazón y el bienestar? ¡Te ayudo a explorar las prácticas orientales del Tai Chi 
