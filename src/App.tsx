@@ -6,7 +6,7 @@ import tc3 from './assets/tc3.jpg'
 import curso1 from './assets/curso1.jpg'
 import medicina1 from './assets/medicinaChina1.jpg'
 import medicina2 from './assets/medicinaChina2.jpg'
-import { Cursos,Carrousel,NavBar, Medicina} from './components/index'
+import { Cursos,Carrousel,NavBar, Medicina, Taichi, Contacto} from './components/index'
 const Container = styled('div')(({ theme }) => ({
   background: theme.palette.primary.light,
   color: theme.palette.primary.contrastText,
@@ -53,13 +53,18 @@ export default function App() {
               y el Qi Gong! Estas disciplinas milenarias son una puerta hacia la transformación interna y el equilibrio en todos los aspectos de la vida.
             </Typography>
           </Grid>
+          <Grid item xs={12} id={'Taichi'}>
+              <Taichi />
+          </Grid>
           <Grid item xs={12} id={'Medicina China'}>
               <Medicina images={imagesMedicine}/>
           </Grid>
           <Grid item xs={12} id={'Cursos Online'}>
               <Cursos images={imagesCurses}/>
           </Grid>
-
+          <Grid item xs={12} id={'Contacto'}>
+              <Contacto/>
+          </Grid>
         </Grid>
       </Container>
     </ThemeProvider>
