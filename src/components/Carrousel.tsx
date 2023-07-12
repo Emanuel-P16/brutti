@@ -64,11 +64,13 @@ export default function Carrousel(props: Props) {
     }
     return (
         <Grid item xs={12} id={'Inicio'}>
-            <CarrouselImg
-                src={selectedImage}
-                className={loaded ? "loaded" : ""}
-                onLoad={() => setLoaded(true)}
-            />
+            <CarrouselButtonContainer>
+                <CarrouselImg
+                    src={selectedImage}
+                    className={loaded ? "loaded" : ""}
+                    onLoad={() => setLoaded(true)}
+                />
+            </CarrouselButtonContainer>
             {
                 props.showButtons ? (
                     <CarrouselButtonContainer>

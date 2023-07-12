@@ -42,8 +42,8 @@ export default function App() {
       <Container>
         <Grid
           container
-          direction="column"
-          alignItems="center"
+          // direction="column"
+          // alignItems="center"
           spacing={3}
         >
           <Carrousel images={images} autoPlay={true} showButtons={true} />
