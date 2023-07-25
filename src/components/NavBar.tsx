@@ -13,7 +13,6 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
-
 interface Props {
   /**
    * Injected by the documentation to work in an iframe.
@@ -23,7 +22,7 @@ interface Props {
 }
 
 const drawerWidth = 240;
-const navItems = ["Inicio", "Taichi", "Medicina China","Galeria","Cursos Online","Contacto"];
+const navItems = ["Inicio", "Servicios", "Clases", "Contacto"];
 
 export default function NavBar(props: Props) {
   const { window } = props;
@@ -37,20 +36,20 @@ export default function NavBar(props: Props) {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-    }}
-
+    }
+  }
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }} >
       <Typography variant="h6" sx={{ my: 2 }}>
         Bruno Brutti
       </Typography>
       <Divider />
       <List>
         {navItems.map((item) => (
-          <ListItem key={item} disablePadding  onClick={() => handleNavigation(item)}>
-            <ListItemButton  sx={{ textAlign: "center" }}>
-              <ListItemText primary={item}/>
+          <ListItem key={item} disablePadding onClick={() => handleNavigation(item)}>
+            <ListItemButton sx={{ textAlign: "center" }}>
+              <ListItemText primary={item} />
             </ListItemButton>
           </ListItem>
         ))}
@@ -62,55 +61,55 @@ export default function NavBar(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
-      <CssBaseline />
-      <AppBar component="nav">
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: "none" } }}
+      <Box sx={{ display: "flex"}} >
+        <CssBaseline />
+        <AppBar component="nav" >
+          <Toolbar>
+            <IconButton
+              color="inherit"
+              aria-label="open drawer"
+              edge="start"
+              onClick={handleDrawerToggle}
+              sx={{ mr: 2, display: { sm: "none" } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" },fontSize:'48px',fontWeight:'normal',letterSpacing:10,paddingLeft:10 }}
+            >
+              Bruno Brutti
+            </Typography>
+            <Box sx={{ display: { xs: "none", sm: "block" } }}>
+              {navItems.map((item) => (
+                <Button key={item} sx={{ color: "#000000",fontSize:'35px',fontWeight:'regular',letterSpacing:2,padding: 2 }} onClick={() => handleNavigation(item)}>
+                  {item}
+                </Button>
+              ))}
+            </Box>
+          </Toolbar>
+        </AppBar>
+        <Box component="nav">
+          <Drawer
+            container={container}
+            variant="temporary"
+            open={mobileOpen}
+            onClose={handleDrawerToggle}
+            ModalProps={{
+              keepMounted: true // Better open performance on mobile.
+            }}
+            sx={{
+              display: { xs: "block", sm: "none" },
+              "& .MuiDrawer-paper": {
+                boxSizing: "border-box",
+                width: drawerWidth
+              }
+            }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-          >
-            Bruno Brutti
-          </Typography>
-          <Box sx={{ display: { xs: "none", sm: "block" } }}>
-            {navItems.map((item) => (
-              <Button key={item} sx={{ color: "#fff" }} onClick={() => handleNavigation(item)}>
-                {item}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Box component="nav">
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: "block", sm: "none" },
-            "& .MuiDrawer-paper": {
-              boxSizing: "border-box",
-              width: drawerWidth
-            }
-          }}
-        >
-          {drawer}
-        </Drawer>
+            {drawer}
+          </Drawer>
+        </Box>
       </Box>
-    </Box>
   );
 }

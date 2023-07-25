@@ -4,13 +4,16 @@ import styled from 'styled-components'
 
 
 const CarrouselImg = styled.img`
- max-width: 500px;
+ /* max-width: 1000px; */
   width: 100%;
-  height: 50vh;
+  height: 100vh;
    opacity: 0;
   transition: 1s;
   &.loaded {
     opacity: 1; 
+  }
+  @media (max-width: 600px) {
+    margin-top: 50px; /* Puedes cambiar este valor según tus necesidades */
   }
   `;
 
@@ -18,7 +21,7 @@ const CarrouselButtonContainer = styled.div`
   display: flex;
   align-content: center;
   flex-direction: row;
-  margin-top: 15px;
+  margin-top: 10px;
   justify-content: center;
 `;
 const CarrouselButton = styled.button`
@@ -63,7 +66,8 @@ export default function Carrousel(props: Props) {
         selectNewImage(props.images)
     }
     return (
-        <Grid item xs={12} id={'Inicio'}>
+        //id={'Inicio'}
+        <Grid item xs={12}>    
             <CarrouselButtonContainer>
                 <CarrouselImg
                     src={selectedImage}
@@ -71,14 +75,14 @@ export default function Carrousel(props: Props) {
                     onLoad={() => setLoaded(true)}
                 />
             </CarrouselButtonContainer>
-            {
+            {/* {
                 props.showButtons ? (
                     <CarrouselButtonContainer>
                         <CarrouselButton onClick={previous}>{"<"}</CarrouselButton>
                         <CarrouselButton onClick={next}>{">"}</CarrouselButton>
                     </CarrouselButtonContainer>
                 ) : <></>
-            }
+            } */}
         </Grid>
     )
 }
