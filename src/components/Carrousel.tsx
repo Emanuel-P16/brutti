@@ -24,12 +24,12 @@ const CarrouselButtonContainer = styled.div`
   margin-top: 10px;
   justify-content: center;
 `;
-const CarrouselButton = styled.button`
-  color: white;
-  background-color: #eb118a;
-  padding: 8px;
-  margin: 0 5px;
-`;
+// const CarrouselButton = styled.button`
+//   color: white;
+//   background-color: #eb118a;
+//   padding: 8px;
+//   margin: 0 5px;
+// `;
 interface Props {
     images: string[];
     autoPlay?: boolean;
@@ -59,12 +59,12 @@ export default function Carrousel(props: Props) {
             setSelectedIndex(nextIndex);
         }, 500);
     }
-    const previous = () => {
-        selectNewImage(props.images, false)
-    }
-    const next = () => {
-        selectNewImage(props.images)
-    }
+    // const previous = () => {
+    //     selectNewImage(props.images, false)
+    // }
+    // const next = () => {
+    //     selectNewImage(props.images)
+    // }
     return (
         //id={'Inicio'}
         <Grid item xs={12}>    

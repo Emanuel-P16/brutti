@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import styled from 'styled-components'
 
 const HomeImg = styled.img`

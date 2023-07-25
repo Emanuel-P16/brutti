@@ -1,13 +1,13 @@
 import { Grid, ThemeProvider, Typography, createTheme, styled } from '@mui/material';
 import { primaryColorPalette, secondaryColorPalette } from "./color-palette";
-import tc1 from './assets/tc1.jpg'
+// import tc1 from './assets/tc1.jpg'
 import Home from './assets/Home.jpg'
-import tc2 from './assets/tc2.jpg'
-import tc3 from './assets/tc3.jpg'
+// import tc2 from './assets/tc2.jpg'
+// import tc3 from './assets/tc3.jpg'
 import curso1 from './assets/curso1.jpg'
 import medicina1 from './assets/medicinaChina1.jpg'
 import medicina2 from './assets/medicinaChina2.jpg'
-import { Cursos,Carrousel,NavBar, Medicina, Taichi, Contacto, Inicio} from './components/index'
+import { Cursos,NavBar, Medicina, Taichi, Contacto, Inicio} from './components/index'
 const Container = styled('div')(({ theme }) => ({
   background: theme.palette.primary.light,
   color: theme.palette.primary.contrastText,
@@ -16,9 +16,9 @@ const Container = styled('div')(({ theme }) => ({
 
 export default function App() {
 
-  const images = [
-    tc1
-  ]
+  // const images = [
+  //   tc1
+  // ]
   const homeImages =[
     Home
   ]
