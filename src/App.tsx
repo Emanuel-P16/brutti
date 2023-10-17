@@ -1,4 +1,4 @@
-import { Grid, ThemeProvider, Typography, createTheme, styled } from '@mui/material';
+import { Grid, ThemeProvider, createTheme, styled } from '@mui/material';
 import { primaryColorPalette, secondaryColorPalette } from "./color-palette";
 // import tc1 from './assets/tc1.jpg'
 import Home from './assets/Home.jpg'
@@ -7,7 +7,7 @@ import Home from './assets/Home.jpg'
 import curso1 from './assets/curso1.jpg'
 import medicina1 from './assets/medicinaChina1.jpg'
 import medicina2 from './assets/medicinaChina2.jpg'
-import { Cursos,NavBar, Medicina, Taichi, Contacto, Inicio, Servicios} from './components/index'
+import { Cursos,NavBar,  Contacto, Inicio, Servicios} from './components/index'
 const Container = styled('div')(({ theme }) => ({
   background: theme.palette.primary.light,
   color: theme.palette.primary.contrastText,
@@ -75,9 +75,9 @@ export default function App() {
           <Grid item xs={12} id={'Servicios'}>
               <Servicios images={imagesMedicine}/>
           </Grid>
-          {/* <Grid item xs={12} id={'Cursos Online'}>
+          <Grid item xs={12} id={'Cursos Online'}>
               <Cursos images={imagesCurses}/>
-          </Grid> */}
+          </Grid>
           <Grid item xs={12} id={'Contacto'}>
               <Contacto/>
           </Grid>
