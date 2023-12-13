@@ -77,7 +77,7 @@ export default function Servicios(props: Props) {
                                 Acupuntura
                             </Typography>
                             <Typography variant='subtitle1'>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem molestiae laborum autem molestias? Asperiores expedita, ex eaque quo tempore distinctio cumque error recusandae sunt modi adipisci aut illo dolore rem.
+                            La acupuntura es una terapia de la medicina china que utiliza agujas finas para estimular puntos específicos del cuerpo.
                             </Typography>
                         </CardContent>
                         <CardActions>
@@ -90,15 +90,15 @@ export default function Servicios(props: Props) {
                         <CardMedia
                             sx={{ height: 300, width: 300 }}
                             component="img"
-                            image={props.images[0]}
+                            image={props.images[1]}
                             className={classesServices.imageServices}
                         />
                         <CardContent style={{ paddingTop: '220px' }}>
                             <Typography variant='h3' fontWeight='bold'>
-                                Acupuntura
+                                Masaje Tui Na
                             </Typography>
                             <Typography variant='subtitle1'>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem molestiae laborum autem molestias? Asperiores expedita, ex eaque quo tempore distinctio cumque error recusandae sunt modi adipisci aut illo dolore rem.
+                                El masaje Tuina es una antigua terapia de la medicina china que combina movimientos de presión y estiramiento para aliviar la tensión muscular.
                             </Typography>
                         </CardContent>
                         <CardActions>
@@ -111,15 +111,15 @@ export default function Servicios(props: Props) {
                         <CardMedia
                             sx={{ height: 300, width: 300 }}
                             component="img"
-                            image={props.images[0]}
+                            image={props.images[2]}
                             className={classesServices.imageServices}
                         />
                         <CardContent style={{ paddingTop: '220px' }}>
                             <Typography variant='h3' fontWeight='bold'>
-                                Acupuntura
+                              Fitoterapia
                             </Typography>
                             <Typography variant='subtitle1'>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem molestiae laborum autem molestias? Asperiores expedita, ex eaque quo tempore distinctio cumque error recusandae sunt modi adipisci aut illo dolore rem.
+                            La fitoterapia es una práctica terapéutica que utiliza extractos de plantas medicinales para tratar diversas afecciones y promover la salud.
                             </Typography>
                         </CardContent>
                         <CardActions>
@@ -132,15 +132,15 @@ export default function Servicios(props: Props) {
                         <CardMedia
                             sx={{ height: 300, width: 300 }}
                             component="img"
-                            image={props.images[0]}
+                            image={props.images[3]}
                             className={classesServices.imageServices}
                         />
                         <CardContent style={{ paddingTop: '220px' }}>
                             <Typography variant='h3' fontWeight='bold'>
-                                Acupuntura
+                                Qi Gong
                             </Typography>
                             <Typography variant='subtitle1'>
-                                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem molestiae laborum autem molestias? Asperiores expedita, ex eaque quo tempore distinctio cumque error recusandae sunt modi adipisci aut illo dolore rem.
+                              El Qi Gong es una antigua disciplina china que combina movimientos suaves, respiración controlada y meditación para cultivar la energía vital o "Qi" en el cuerpo.
                             </Typography>
                         </CardContent>
                         <CardActions>

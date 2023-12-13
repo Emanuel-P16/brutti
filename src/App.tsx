@@ -4,9 +4,13 @@ import { primaryColorPalette, secondaryColorPalette } from "./color-palette";
 import Home from './assets/Home.jpg'
 // import tc2 from './assets/tc2.jpg'
 // import tc3 from './assets/tc3.jpg'
-import curso1 from './assets/curso1.jpg'
-import medicina1 from './assets/medicinaChina1.jpg'
-import medicina2 from './assets/medicinaChina2.jpg'
+import curso1 from './assets/cursos/cursotaichi.jpg'
+import curso2 from './assets/cursos/cursochikun.jpg'
+import curso3 from './assets/cursos/cursoqigong.jpg'
+import medicina1 from './assets/servicios/acupuntura.jpg'
+import medicina2 from './assets/servicios/fitoterapia.jpg'
+import medicina3 from './assets/servicios/qigong.jpg'
+import medicina4 from './assets/servicios/tuina.jpg'
 import { Cursos,NavBar,  Contacto, Inicio, Servicios} from './components/index'
 const Container = styled('div')(({ theme }) => ({
   background: theme.palette.primary.light,
@@ -23,10 +27,10 @@ export default function App() {
     Home
   ]
   const imagesCurses = [
-    curso1
+    curso1,curso2,curso3
   ]
   const imagesMedicine = [
-    medicina1,medicina2
+    medicina1,medicina2,medicina3,medicina4
   ]
   const theme = createTheme(
     {
