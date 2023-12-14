@@ -11,6 +11,9 @@ const useStylesServices = makeStyles(() => ({
         position: 'relative',
         marginBottom: '5rem',
         padding: '0 5rem',
+        '@media (max-width: 1250px)': {
+            padding: '0 2rem'
+        }
     },
     imageServices: {
         borderRadius: '5%',
@@ -20,21 +23,24 @@ const useStylesServices = makeStyles(() => ({
         color: 'black',
         position: 'absolute',
         bottom: 0,
-        marginBottom: '15px',
-        marginLeft: '-550px',
+        marginBottom: '-25px',
+        marginLeft: '-400px',
         width: '200px',
         height: '50px',
         borderRadius: '50px',
         '&:hover': {
             background: '#E6B400', // Color de fondo cuando el cursor está sobre el botón
         },
+        '@media (max-width: 1250px)': {
+            marginLeft: '-100px'
+        }
     },
     centerCard: {
         display: 'flex',
         justifyContent: 'center',
         position: 'relative',
         marginBottom: '200px',
-        maxHeight: '600px'
+        maxHeight: '1000px'
 
     },
     card: {
@@ -43,6 +49,14 @@ const useStylesServices = makeStyles(() => ({
         display: 'flex',
         alignItems: 'center',
         textAlign: 'center',
+        '@media (max-width: 1250px)': {
+            display: 'flex',
+            flexDirection: 'column'
+        }
+    },
+    cardContent: {
+        display: 'flex',
+        flexDirection: 'column',
 
     }
 }))
@@ -54,62 +68,96 @@ export default function Cursos(props: Props) {
         >
             <Grid container direction='row' className={classesServices.centerSection}>
                 <Grid item xs={12} md={12} xl={12} className={classesServices.centerCard}>
-                    <Card sx={{ maxWidth: 1500, maxHeight: 1500 }} className={classesServices.card}>
+                    <Card sx={{ maxWidth: 1000, maxHeight: 1500 }} className={classesServices.card}>
                         <CardMedia
                             sx={{ height: 500, width: 1000 }}
                             image={props.images[0]}
                             title="chikun"
                             className={classesServices.imageServices}
                         />
-                        <CardContent>
-                            <Typography variant='h6' color="black" noWrap={false}>
-                                En este curso vamos a profundizar en los conocimientos de los antiguos taoístas para poder generar una armonización desde uno mismo.No vamos a buscar afuera, si no que adentro.
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size='small' color='secondary' className={classesServices.buttonServices}>
-                                <Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography>
-                            </Button>
-                        </CardActions>
+                        <Grid container direction='row'>
+                            <Grid item xs={12}>
+                                <CardContent className={classesServices.cardContent}>
+                                    <Typography variant='h3' color="black" noWrap={false} borderBottom={2}>
+                                        Tai chi (INICIACIÓN)
+                                    </Typography>
+                                    <Typography variant='h6' color="black" noWrap={false}>
+                                        Arte marcial transmitido para la ascensión de la conciencia. Iniciantes en el camino del la virtud.
+                                    </Typography>
+                                </CardContent>
+                            </Grid>
+                            <Grid item xs={12} display={'flex'} justifyContent={'center'}>
+                                <CardActions>
+                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/tai-chi-chuan-iniciatico/'>
+                                        {/* className={classesServices.buttonServices}/ */}
+                                        <Typography variant='subtitle1' fontWeight='bold'>Comprar curso</Typography>
+                                    </Button>
+                                </CardActions>
+                            </Grid>
+                        </Grid>
                     </Card>
                 </Grid>
                 <Grid item xs={12} md={12} xl={12} className={classesServices.centerCard}>
-                    <Card sx={{ maxWidth: 1500, maxHeight: 1500 }} className={classesServices.card}>
+                    <Card sx={{ maxWidth: 1000, maxHeight: 1500 }} className={classesServices.card}>
                         <CardMedia
                             sx={{ height: 500, width: 1000 }}
                             image={props.images[1]}
                             title="chikun"
                             className={classesServices.imageServices}
                         />
-                        <CardContent>
-                            <Typography variant='h6' color="black" noWrap={false}>
-                                En este curso vamos a profundizar en los conocimientos de los antiguos taoístas para poder generar una armonización desde uno mismo.No vamos a buscar afuera, si no que adentro.
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size='small' color='secondary' className={classesServices.buttonServices} ><Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography></Button>
-                        </CardActions>
+                        <Grid container direction='row'>
+                            <Grid item xs={12}>
+                                <CardContent className={classesServices.cardContent}>
+                                    <Typography variant='h3' color="black" noWrap={false} borderBottom={2}>
+                                        Encontrá tu equilibrio con chi kun TAOISTA
+                                    </Typography>
+                                    <Typography variant='h6' color="black" noWrap={false}>
+                                        Encontra tu propio equilibrio utilizando esta filosofofía
+                                    </Typography>
+                                </CardContent>
+                            </Grid>
+                            <Grid item xs={12} display={'flex'} justifyContent={'center'}>
+                                <CardActions>
+                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/mindfulness-taoista/' >
+                                        {/* className={classesServices.buttonServices}/ */}
+                                        <Typography variant='subtitle1' fontWeight='bold'>Comprar curso</Typography>
+                                    </Button>
+                                </CardActions>
+                            </Grid>
+                        </Grid>
                     </Card>
                 </Grid>
                 <Grid item xs={12} md={12} xl={12} className={classesServices.centerCard}>
-                    <Card sx={{ maxWidth: 1500, maxHeight: 1500 }} className={classesServices.card}>
+                    <Card sx={{ maxWidth: 1000, maxHeight: 1500 }} className={classesServices.card}>
                         <CardMedia
                             sx={{ height: 500, width: 1000 }}
                             image={props.images[2]}
                             title="chikun"
                             className={classesServices.imageServices}
                         />
-                        <CardContent>
-                            <Typography variant='h6' color="black" noWrap={false}>
-                                En este curso vamos a profundizar en los conocimientos de los antiguos taoístas para poder generar una armonización desde uno mismo.No vamos a buscar afuera, si no que adentro.
-                            </Typography>
-                        </CardContent>
-                        <CardActions >
-                            {/* <Button size="medium" href='https://www.udemy.com/course/mindfulness-taoista/?referralCode=017D1149FAFE5F5C3D3C#instructor-1'>Empezar</Button> */}
-                            <Button size='small' color='secondary' className={classesServices.buttonServices} href='https://www.udemy.com/course/mindfulness-taoista/?referralCode=017D1149FAFE5F5C3D3C#instructor-1' ><Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography></Button>
-                        </CardActions>
+                        <Grid container direction='row'>
+                            <Grid item xs={12}>
+                                <CardContent className={classesServices.cardContent}>
+                                    <Typography variant='h3' color="black" noWrap={false} borderBottom={2}>
+                                        Tai chi mental - Qi gong.
+                                    </Typography>
+                                    <Typography variant='h6' color="black" noWrap={false}>
+                                        Meditación y conocimiento de la medicina taoísta
+                                    </Typography>
+                                </CardContent>
+                            </Grid>
+                            <Grid item xs={12} display={'flex'} justifyContent={'center'}>
+                                <CardActions>
+                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/qi-gong-sanacion-de-los-5-organos/' >
+                                        {/* className={classesServices.buttonServices}/ */}
+                                        <Typography variant='subtitle1' fontWeight='bold'>Comprar curso</Typography>
+                                    </Button>
+                                </CardActions>
+                            </Grid>
+                        </Grid>
                     </Card>
                 </Grid>
+
             </Grid>
         </Grid>
     )
