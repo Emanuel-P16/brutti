@@ -19,9 +19,10 @@ const useStylesContact = makeStyles(() => ({
         boxShadow: 'none'
     },
     contactButton: {
-        border: 'solid 1px #FFC800',
+        background: '#FFC800',
+        border: 'solid 2px #FFC800',
         color: 'black',
-        borderRadius: '5%',
+        borderRadius: '3%',
         marginTop: '20px',
         '&:hover': {
             background: '#E6B400', // Color de fondo cuando el cursor está sobre el botón
@@ -30,7 +31,7 @@ const useStylesContact = makeStyles(() => ({
     socialsButton: {
         color: 'black',
         // backgroundColor: 'black'
-        '&:hover':{
+        '&:hover': {
             color: '#FFC800'
         }
     }
@@ -49,8 +50,7 @@ export default function Taichi() {
                         </Typography>
                         <Typography variant="h6" >
 
-                            Frase motivadora
-                            Si tenes alguna duda
+                            «Un viaje de 1000 millas comienza con el primer paso». Lao Zi
 
                         </Typography>
                         <Button size={'large'} color="primary" className={contactStyles.contactButton}>
@@ -62,14 +62,14 @@ export default function Taichi() {
                 </Grid>
                 <Grid item xs={12} md={12} xl={12} className={contactStyles.contactService}>
                     <Card className={contactStyles.contactCard}>
-                        <Typography  variant='h5' fontWeight={'bold'}>
+                        <Typography variant='h5' fontWeight={'bold'}>
                             Contacto
                         </Typography>
                         <Typography>
                             Email de contacto:
                         </Typography>
-                        <Link href='mailto:palazon.emanuel@gmail.com' underline="none" color="inherit" fontWeight={'bold'}>
-                            palazon.emanuel@gmail.com
+                        <Link href='mailto:bruttibrunoo@gmail.com' underline="none" color="inherit" fontWeight={'bold'}>
+                            bruttibrunoo@gmail.com
                         </Link>
                         <CardActions>
                             <Button size="large" className={contactStyles.socialsButton}>
