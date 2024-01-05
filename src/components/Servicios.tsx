@@ -1,4 +1,4 @@
-import { Grid, Card, CardMedia, CardContent, Typography, CardActions, Button } from '@mui/material';
+import { Grid, Card, CardMedia, CardContent, Typography, CardActions, Button, Link } from '@mui/material';
 import { makeStyles } from '@mui/styles'
 
 interface Props {
@@ -81,7 +81,7 @@ export default function Servicios(props: Props) {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size='small' color='secondary' className={classesServices.buttonServices} ><Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography></Button>
+                            <Button size='small' color='secondary' className={classesServices.buttonServices} href='https://wa.me/1153111187/?text=!Hola, quisiera información sobre el servicio de acupuntura, muchas gracias!.' ><Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography></Button>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -102,7 +102,7 @@ export default function Servicios(props: Props) {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size='small' color='secondary' className={classesServices.buttonServices} ><Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography></Button>
+                            <Button size='small' color='secondary' className={classesServices.buttonServices} href='https://wa.me/1153111187/?text=!Hola, quisiera información sobre el servicio de Masaje Tui Na, muchas gracias!.'><Typography variant='subtitle1' fontWeight='bold' >Reservar Turno</Typography></Button>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -123,7 +123,7 @@ export default function Servicios(props: Props) {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size='small' color='secondary' className={classesServices.buttonServices} ><Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography></Button>
+                            <Button size='small' color='secondary' className={classesServices.buttonServices} href='https://wa.me/1153111187/?text=!Hola, quisiera información sobre el servicio de fitoterapia, muchas gracias!.'><Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography></Button>
                         </CardActions>
                     </Card>
                 </Grid>
@@ -144,7 +144,7 @@ export default function Servicios(props: Props) {
                             </Typography>
                         </CardContent>
                         <CardActions>
-                            <Button size='small' color='secondary' className={classesServices.buttonServices} ><Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography></Button>
+                            <Button size='small' color='secondary' className={classesServices.buttonServices} href='https://wa.me/1153111187/?text=!Hola, quisiera información sobre el servicio de Qi Gong, muchas gracias!.'><Typography variant='subtitle1' fontWeight='bold'>Reservar Turno</Typography></Button>
                         </CardActions>
                     </Card>
                 </Grid>

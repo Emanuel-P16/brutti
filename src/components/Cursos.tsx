@@ -17,23 +17,19 @@ const useStylesServices = makeStyles(() => ({
     },
     imageServices: {
         borderRadius: '5%',
+        '@media (max-width: 1250px)': {
+            width: '300px',
+            height: '350px'
+        }
     },
     buttonServices: {
         background: '#FFC800',
         color: 'black',
-        position: 'absolute',
-        bottom: 0,
-        marginBottom: '-25px',
-        marginLeft: '-400px',
-        width: '200px',
-        height: '50px',
-        borderRadius: '50px',
+        borderRadius: '5%',
         '&:hover': {
             background: '#E6B400', // Color de fondo cuando el cursor está sobre el botón
-        },
-        '@media (max-width: 1250px)': {
-            marginLeft: '-100px'
-        }
+          },
+
     },
     centerCard: {
         display: 'flex',
@@ -59,6 +55,7 @@ const useStylesServices = makeStyles(() => ({
         flexDirection: 'column',
 
     }
+
 }))
 export default function Cursos(props: Props) {
     const classesServices = useStylesServices();
@@ -68,9 +65,9 @@ export default function Cursos(props: Props) {
         >
             <Grid container direction='row' className={classesServices.centerSection}>
                 <Grid item xs={12} md={12} xl={12} className={classesServices.centerCard}>
-                    <Card sx={{ maxWidth: 1000, maxHeight: 1500 }} className={classesServices.card}>
+                    <Card sx={{ maxWidth: 1000, maxHeight: 1000 }} className={classesServices.card}>
                         <CardMedia
-                            sx={{ height: 500, width: 1000 }}
+                            sx={{ height: 600, width: 1000 }}
                             image={props.images[0]}
                             title="chikun"
                             className={classesServices.imageServices}
@@ -88,9 +85,9 @@ export default function Cursos(props: Props) {
                             </Grid>
                             <Grid item xs={12} display={'flex'} justifyContent={'center'}>
                                 <CardActions>
-                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/tai-chi-chuan-iniciatico/'>
+                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/tai-chi-chuan-iniciatico/' className={classesServices.buttonServices}>
                                         {/* className={classesServices.buttonServices}/ */}
-                                        <Typography variant='subtitle1' fontWeight='bold'>Comprar curso</Typography>
+                                        <Typography variant='subtitle1' fontWeight='bold'>¡Suscribite ahora!</Typography>
                                     </Button>
                                 </CardActions>
                             </Grid>
@@ -98,9 +95,9 @@ export default function Cursos(props: Props) {
                     </Card>
                 </Grid>
                 <Grid item xs={12} md={12} xl={12} className={classesServices.centerCard}>
-                    <Card sx={{ maxWidth: 1000, maxHeight: 1500 }} className={classesServices.card}>
+                    <Card sx={{ maxWidth: 1000, maxHeight: 1000 }} className={classesServices.card}>
                         <CardMedia
-                            sx={{ height: 500, width: 1000 }}
+                            sx={{ height: 600, width: 1000 }}
                             image={props.images[1]}
                             title="chikun"
                             className={classesServices.imageServices}
@@ -118,9 +115,9 @@ export default function Cursos(props: Props) {
                             </Grid>
                             <Grid item xs={12} display={'flex'} justifyContent={'center'}>
                                 <CardActions>
-                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/mindfulness-taoista/' >
+                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/mindfulness-taoista/'  className={classesServices.buttonServices}>
                                         {/* className={classesServices.buttonServices}/ */}
-                                        <Typography variant='subtitle1' fontWeight='bold'>Comprar curso</Typography>
+                                        <Typography variant='subtitle1' fontWeight='bold'>¡Suscribite ahora!</Typography>
                                     </Button>
                                 </CardActions>
                             </Grid>
@@ -128,9 +125,9 @@ export default function Cursos(props: Props) {
                     </Card>
                 </Grid>
                 <Grid item xs={12} md={12} xl={12} className={classesServices.centerCard}>
-                    <Card sx={{ maxWidth: 1000, maxHeight: 1500 }} className={classesServices.card}>
+                    <Card sx={{ maxWidth: 1000, maxHeight: 1000 }} className={classesServices.card}>
                         <CardMedia
-                            sx={{ height: 500, width: 1000 }}
+                            sx={{ height: 600, width: 1000 }}
                             image={props.images[2]}
                             title="chikun"
                             className={classesServices.imageServices}
@@ -148,9 +145,9 @@ export default function Cursos(props: Props) {
                             </Grid>
                             <Grid item xs={12} display={'flex'} justifyContent={'center'}>
                                 <CardActions>
-                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/qi-gong-sanacion-de-los-5-organos/' >
+                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/qi-gong-sanacion-de-los-5-organos/'  className={classesServices.buttonServices} >
                                         {/* className={classesServices.buttonServices}/ */}
-                                        <Typography variant='subtitle1' fontWeight='bold'>Comprar curso</Typography>
+                                        <Typography variant='subtitle1' fontWeight='bold'>¡Suscribite ahora!</Typography>
                                     </Button>
                                 </CardActions>
                             </Grid>

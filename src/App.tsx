@@ -11,6 +11,7 @@ import medicina1 from './assets/servicios/acupuntura.jpg'
 import medicina2 from './assets/servicios/fitoterapia.jpg'
 import medicina3 from './assets/servicios/qigong.jpg'
 import medicina4 from './assets/servicios/tuina.jpg'
+import homeVideo from './assets/videos/taichi.mp4'
 import { Cursos,NavBar,  Contacto, Inicio, Servicios} from './components/index'
 const Container = styled('div')(({ theme }) => ({
   background: theme.palette.primary.light,
@@ -61,7 +62,7 @@ export default function App() {
           spacing={3}
         >
           <Grid item xs={12}>
-           <Inicio homeImages={homeImages}/>
+           <Inicio homeImages={homeImages} homeVideo={homeVideo}/>
           </Grid>
           {/* <Carrousel images={images} autoPlay={true} showButtons={true} /> */}
           {/* <Grid item xs={12} >

@@ -1,110 +1,107 @@
-import { Typography } from "@mui/material";
-import styled from 'styled-components'
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { makeStyles } from '@mui/styles'
 
-const HomeImg = styled.img`
- /* max-width: 1900px; */
-  width: 100%;
-  /* height: auto; */
-  height: 100vh;
-  display: block;
-  /* margin-top:6rem; */
-   /* opacity: 0;
-  transition: 1s; */
-  /* &.loaded {
-    opacity: 1; 
-  } */
-   @media (max-width: 600px) {
-    margin-top: 3rem; /* Puedes cambiar este valor según tus necesidades */
-    width: 150%;
-  }  
-  `;
-const HomeContainer = styled.div`
-    position: relative;
-    display: inline-block;
-    width:80%;
-    margin-top: 6rem;
-    @media (max-width: 600px){
-        width: 100%;
+const useStylesServices = makeStyles(() => ({
+    centerSection: {
+        display: 'flex',
+        justifyContent: 'center',
+        position: 'relative',
+        marginBottom: '5rem',
+        marginTop: '200px',
+        padding: '0 5rem',
+        '@media (max-width: 1250px)': {
+            padding: '0 2rem'
+        }
+    },
+    imageServices: {
+        // borderRadius: '5%',
+        // width: '500px',
+        // position: 'fixed',
+        '@media (max-width: 1250px)': {
+            width: '300px',
+            height: '350px'
+        }
+    },
+    buttonServices: {
+        background: '#FFC800',
+        color: 'black',
+        borderRadius: '5%',
+        '&:hover': {
+            background: '#E6B400', // Color de fondo cuando el cursor está sobre el botón
+        },
+
+    },
+    centerCard: {
+        display: 'flex',
+        justifyContent: 'center',
+        position: 'relative',
+        marginBottom: '200px',
+        maxHeight: '1000px'
+
+    },
+    card: {
+        border: '2px solid #ffffff',
+        boxShadow: '5px 1px 15px #ffffff',
+        display: 'flex',
+        alignItems: 'center',
+        textAlign: 'center',
+        margin: 'auto',
+        '@media (max-width: 1250px)': {
+            display: 'flex',
+            flexDirection: 'column'
+        }
+    },
+    cardContent: {
+        display: 'flex',
+        flexDirection: 'column',
+
     }
-  `
-const TextContainer = styled.div`
-  position: absolute;
-  top:0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #000000;
-  font-weight:bold;
-  padding-left: 60rem;
-  padding-bottom:10rem;
 
-  @media (max-width: 600px){
-    padding-left: 0rem;
-    padding-bottom: 0rem;
-    text-align: center;
-  }
-`
+}))
 interface Props {
     homeImages: string[];
+    homeVideo: string;
 }
 export default function Inicio(props: Props) {
+    const classesServices = useStylesServices();
     return (
-        // <Grid container spacing={3} sx={{paddingTop:15}}>
-        //     <Grid item xs={8}>
-        //         <HomeImg
-        //             src={props.homeImages[0]}
-        //         />
-        //     </Grid>
-        //     <Grid item xs={4} sx={{alignSelf:'center'}}>
-        //         <Typography variant="h1" sx={{textAlign:'center'}}>
-        //             Medicina
-        //         </Typography>
-        //         <Typography variant="h1" sx={{textAlign:'center'}}>
-        //             Tradicional China
-        //         </Typography>
-        //     </Grid>
-        // </Grid>
-        // <Box position="relative" display="inline-block">
-        //     {/* Contenedor de la imagen */}
-        //     <HomeImg
-        //         src={props.homeImages[0]} // Reemplaza "ruta_de_la_imagen.jpg" con la URL o ruta de tu imagen
-        //         alt="Imagen de fondo"
-        //     />
-        //     {/* Contenedor del texto superpuesto */}
-        //     <Box
-        //         position="absolute"
-        //         top={0}
-        //         left={0}
-        //         width="100%"
-        //         height="100%"
-        //         display="flex"
-        //         justifyContent="center"
-        //         alignItems="center"
-        //         color="#000000" // Color del texto (puedes personalizarlo)
-        //         fontWeight="bold" // Puedes ajustar el fontWeight según tus necesidades
-        //     >
-        //         <Typography variant="h1" sx={{marginLeft:150}}>
-        //             Tu texto superpuesto {/* Texto que se superpondrá */}
-        //         </Typography>
-        //     </Box>
-        // </Box>
-        <HomeContainer>
-            <HomeImg
-                src={props.homeImages[0]} // Reemplaza "ruta_de_la_imagen.jpg" con la URL o ruta de tu imagen
-                alt="Imagen de fondo"
-            />
-            <TextContainer>
-                <Typography variant="h1" sx={{fontSize:60 ,letterSpacing:5}} >
-                    Medicina 
-                </Typography>
-                <Typography variant="h1" sx={{fontSize:60 ,letterSpacing:5}}>
-                Tradicional China
-                </Typography>
-            </TextContainer>
-        </HomeContainer>
+        <Grid
+            container
+        >
+            <Grid container direction='row' className={classesServices.centerSection}>
+                <Grid item xs={12} md={12} xl={12} className={classesServices.centerCard}>
+                    {/* <Card sx={{ maxWidth: 1000, maxHeight: 1000 }} className={classesServices.card}> */}
+                    <Card className={classesServices.card}>
+                        <CardMedia
+                            component='video'
+                            controls
+                            src={props.homeVideo}
+                            title="chikun"
+                            className={classesServices.imageServices}
+                        />
+                        <Grid container direction='row'>
+                            <Grid item xs={12}>
+                                <CardContent className={classesServices.cardContent}>
+                                    <Typography variant='h3' color="black" noWrap={false} borderBottom={2}>
+                                        Tai chi (INICIACIÓN)
+                                    </Typography>
+                                    <Typography variant='h6' color="black" noWrap={false}>
+                                        En este curso te enseñare a entrar en la sutileza de un mundo que existe pero que jamás fue entrenado, un conocimiento transmitido desde milenios donde los hombres eran sabios, en donde encontraras una herramienta para tu despertar interior.
+                                    </Typography>
+                                </CardContent>
+                            </Grid>
+                            <Grid item xs={12} display={'flex'} justifyContent={'center'}>
+                                <CardActions>
+                                    <Button size='small' color='secondary' href='https://www.udemy.com/course/tai-chi-chuan-iniciatico/' className={classesServices.buttonServices}>
+                                        {/* className={classesServices.buttonServices}/ */}
+                                        <Typography variant='subtitle1' fontWeight='bold'>¡Suscribite ahora!</Typography>
+                                    </Button>
+                                </CardActions>
+                            </Grid>
+                        </Grid>
+                    </Card>
+                </Grid>
+            </Grid>
+        </Grid>
     )
 }
