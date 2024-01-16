@@ -3,6 +3,7 @@ import { makeStyles } from '@mui/styles'
 import InstagramIcon from '@mui/icons-material/Instagram';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const useStylesContact = makeStyles(() => ({
     contactContainer: {
@@ -54,9 +55,11 @@ export default function Taichi() {
 
                         </Typography>
                         <Button size={'large'} color="primary" className={contactStyles.contactButton}>
-                            <Typography>
-                                Contáctame
-                            </Typography>
+                            <Link href="https://wa.me/5491153111187/?text=!Hola, quisiera información sobre los servicios que ofreces!" underline="none" color="inherit">
+                                <Typography>
+                                    Contáctame
+                                </Typography>
+                            </Link>
                         </Button>
                     </Card>
                 </Grid>
@@ -73,18 +76,23 @@ export default function Taichi() {
                         </Link>
                         <CardActions>
                             <Button size="large" className={contactStyles.socialsButton}>
-                                <Link href="#" underline="none" color="inherit">
+                                <Link href="https://www.instagram.com/bruno.brutti/?hl=es" underline="none" color="inherit">
                                     <InstagramIcon />
                                 </Link>
                             </Button>
-                            <Button size="large" className={contactStyles.socialsButton}>
+                            {/* <Button size="large" className={contactStyles.socialsButton}>
                                 <Link href="#" underline="none" color="inherit">
                                     <FacebookIcon />
                                 </Link>
+                            </Button> */}
+                            <Button size="large" className={contactStyles.socialsButton}>
+                                <Link href="https://wa.me/5491153111187/?text=!Hola, quisiera información sobre los servicios que ofreces!" underline="none" color="inherit">
+                                    <WhatsAppIcon />
+                                </Link>
                             </Button>
                             <Button size="large" className={contactStyles.socialsButton}>
-                                <Link href="#" underline="none" color="inherit">
-                                    <WhatsAppIcon />
+                                <Link href="https://www.youtube.com/user/YERATHELTPAO" underline="none" color="inherit">
+                                    <YouTubeIcon />
                                 </Link>
                             </Button>
 
